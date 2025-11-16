@@ -26,7 +26,7 @@ export default function Footer({
               <div className='h-8 w-8 rounded-lg bg-gradient-to-br from-purple-600 to-amber-500 flex items-center justify-center'>
                 <span className='text-white font-bold text-lg'>A</span>
               </div>
-              <span className='text-xl font-bold text-foreground'>Anim Ads</span>
+              <span className='text-xl font-bold text-foreground'>AdEasy</span>
             </div>
             <p className='text-sm leading-6 text-muted-foreground max-w-xs'>
               Create scroll-stopping promotional videos in 60 seconds. No design skills required.
@@ -185,7 +185,7 @@ export default function Footer({
         {/* Bottom section */}
         <div className='mt-16 border-t border-border pt-8 sm:mt-20 lg:mt-24'>
           <p className='text-xs leading-5 text-muted-foreground text-center'>
-            &copy; {currentYear} Anim Ads. All rights reserved. Made with love for entrepreneurs and marketers.
+            &copy; {currentYear} AdEasy. All rights reserved. Made with love for entrepreneurs and marketers.
           </p>
         </div>
       </div>

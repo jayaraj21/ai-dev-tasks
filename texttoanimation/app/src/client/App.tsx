@@ -5,6 +5,7 @@ import './Main.css';
 import NavBar from './components/NavBar/NavBar';
 import { demoNavigationitems, marketingNavigationItems } from './components/NavBar/constants';
 import CookieConsentBanner from './components/cookie-consent/Banner';
+import { useIsLandingPage } from './hooks/useIsLandingPage';
 
 /**
  * use this component to wrap all child components
@@ -12,6 +13,7 @@ import CookieConsentBanner from './components/cookie-consent/Banner';
  */
 export default function App() {
   const location = useLocation();
+  const isLandingPage = useIsLandingPage();
   const isMarketingPage = useMemo(() => {
     return location.pathname === '/' || location.pathname.startsWith('/pricing');
   }, [location]);
@@ -20,9 +22,11 @@ export default function App() {
 
   const shouldDisplayAppNavBar = useMemo(() => {
     return (
-      location.pathname !== routes.LoginRoute.build() && location.pathname !== routes.SignupRoute.build()
+      location.pathname !== routes.LoginRoute.build() && 
+      location.pathname !== routes.SignupRoute.build() &&
+      !isLandingPage
     );
-  }, [location]);
+  }, [location, isLandingPage]);
 
   const isAdminDashboard = useMemo(() => {
     return location.pathname.startsWith('/admin');

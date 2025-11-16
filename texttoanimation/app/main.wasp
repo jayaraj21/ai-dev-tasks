@@ -237,6 +237,51 @@ query getDownloadFileSignedURL {
 }
 //#endregion
 
+//#region Video Ads
+route VideoAdsRoute { path: "/video-ads", to: VideoAdsPage }
+page VideoAdsPage {
+  authRequired: true,
+  component: import VideoAdsPage from "@src/video-ads/VideoAdsPage"
+}
+
+action createVideoAd {
+  fn: import { createVideoAd } from "@src/video-ads/operations",
+  entities: [User, VideoAd]
+}
+
+action generateVideoAd {
+  fn: import { generateVideoAdAction } from "@src/video-ads/operations",
+  entities: [User, VideoAd]
+}
+
+action deleteVideoAd {
+  fn: import { deleteVideoAd } from "@src/video-ads/operations",
+  entities: [User, VideoAd]
+}
+
+query getVideoAdsByUser {
+  fn: import { getVideoAdsByUser } from "@src/video-ads/operations",
+  entities: [User, VideoAd]
+}
+
+query getVideoAdById {
+  fn: import { getVideoAdById } from "@src/video-ads/operations",
+  entities: [User, VideoAd]
+}
+
+job processVideoGeneration {
+  executor: PgBoss,
+  perform: {
+    fn: import { processVideoGenerationJobs } from "@src/video-ads/videoProcessingJob"
+  },
+  schedule: {
+    cron: "*/2 * * * *" // every 2 minutes
+    // cron: "* * * * *" // every minute. useful for debugging
+  },
+  entities: [User, VideoAd]
+}
+//#endregion
+
 //#region Analytics
 query getDailyStats {
   fn: import { getDailyStats } from "@src/analytics/operations",

@@ -156,7 +156,7 @@ export default function PricingCards() {
                 <p className='text-xs text-muted-foreground mt-1'>per month</p>
               </div>
               <div className='md:col-span-1'>
-                <p className='text-sm text-primary mb-1'>Anim Ads</p>
+                <p className='text-sm text-primary mb-1'>AdEasy</p>
                 <p className='text-2xl font-bold text-primary'>$69</p>
                 <p className='text-xs text-primary mt-1'>one-time payment</p>
               </div>

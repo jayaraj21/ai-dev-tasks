@@ -45,7 +45,7 @@ export default function Hero() {
                     Watch Demo Video
                   </h3>
                   <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    See how Anim Ads creates professional videos in under 60 seconds
+                    See how AdEasy creates professional videos in under 60 seconds
                   </p>
                 </div>
               </div>

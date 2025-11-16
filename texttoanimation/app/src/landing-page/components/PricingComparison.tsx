@@ -45,7 +45,7 @@ export default function PricingComparison() {
         <div className='mx-auto max-w-2xl text-center mb-16'>
           <h2 className='text-base font-semibold leading-7 text-primary'>Comparison</h2>
           <p className='mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
-            Why Choose Anim Ads?
+            Why Choose AdEasy?
           </p>
           <p className='mt-6 text-lg leading-8 text-muted-foreground'>
             See how we stack up against AI video generators and traditional tools.
@@ -68,7 +68,7 @@ export default function PricingComparison() {
                     scope='col'
                     className='py-4 px-6 text-center text-sm font-semibold text-primary bg-primary/5'
                   >
-                    Anim Ads
+                    AdEasy
                   </th>
                   <th
                     scope='col'
@@ -113,7 +113,7 @@ export default function PricingComparison() {
                 <h3 className='text-lg font-semibold text-foreground mb-4'>{row.feature}</h3>
                 <div className='space-y-3'>
                   <div className='flex items-center justify-between p-3 rounded-md bg-primary/5'>
-                    <span className='text-sm font-medium text-muted-foreground'>Anim Ads</span>
+                    <span className='text-sm font-medium text-muted-foreground'>AdEasy</span>
                     <div className='flex items-center gap-2'>
                       <span className='text-sm font-semibold text-primary'>{row.animAds}</span>
                       {row.animAdsWins && <Check className='h-4 w-4 text-green-600' />}
